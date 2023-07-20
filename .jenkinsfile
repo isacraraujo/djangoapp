@@ -1,0 +1,48 @@
+pipeline {
+  agent any 
+  stages {
+    stage('Installer') { 
+      steps {
+        //Python 3.11.4
+        //https://www.python.org/ftp/python/3.11.4/python-3.11.4-amd64.exe
+        //PostgreSQL 14.8
+        //https://sbp.enterprisedb.com/getfile.jsp?fileid=1258631
+        //Node.JS 20.4.0
+        //https://nodejs.org/dist/v20.4.0/node-v20.4.0-x64.msi
+        // Heroku CLI
+        //https://devcenter.heroku.com/articles/heroku-cli
+      }
+    }
+    stage('Build') { 
+      steps {
+        bat 'python --version'
+        bat 'pip --version'
+        bat 'pip install pipenv'
+        bat 'pip install psycopg2'
+        bat 'pip install django'
+        bat 'pip install django-heroku'
+        bat 'pip install waitress'
+        //bat 'pipenv -h'
+        bat 'pipenv shell'
+        bat 'pipenv install django'
+        bat 'pipenv install django-heroku'
+        bat 'pipenv install gunicorn'
+        bat 'pipenv install waitress'
+        //bat 'django-admin startproject finanza'
+        bat 'python manage.py runserver'
+        //bat 'python manage.py startapp expenses'
+        bat 'waitress-serve --listen=127.0.0.1:8000 finanza.wsgi:application'
+      }
+    }
+  stage('Test') { 
+      steps {
+        //
+      }
+    }
+  stage('Deploy') { 
+      steps {
+          // 
+      }
+    }
+  }
+}
