@@ -16,12 +16,14 @@ pipeline {
     stage('Build') { 
       steps {
         bat 'python --version'
+        bat 'python.exe -m pip install --upgrade pip'
         bat 'pip --version'
         bat 'pip install pipenv'
         bat 'pip install psycopg2'
         bat 'pip install django'
         bat 'pip install django-heroku'
         bat 'pip install waitress'
+        bat 'pip install validate_email'
         //bat 'pipenv -h'
         bat 'pipenv shell'
         bat 'pipenv install django'
@@ -32,6 +34,7 @@ pipeline {
         bat 'python manage.py runserver'
         //bat 'python manage.py startapp expenses'
         bat 'waitress-serve --listen=127.0.0.1:8000 finanza.wsgi:application'
+        //bat 'python manage.py migrate'
       }
     }
   stage('Test') { 
