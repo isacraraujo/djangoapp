@@ -79,8 +79,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'finanzadb',
         'USER': 'postgres',
-        'PASSWORD':'123456',
-        'HOST':'localhost',
+        'PASSWORD': '123456',
+        'HOST': 'localhost',
         'PORT': 5432
     }
 }
@@ -140,10 +140,10 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
 
-'''# email stuff
-EMAIL_HOST = os.environ.get('EMAIL_HOST')
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+# email stuff
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'qa.dev.isac@gmail.com'
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+DEFAULT_FROM_EMAIL = 'qa.dev.isac@gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')'''
+EMAIL_HOST_PASSWORD = 'cnteujnwjbgzoleb'

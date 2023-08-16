@@ -35,7 +35,7 @@ emailField.addEventListener("keyup", (e) => {
           submitBtn.disabled = true;
           emailField.classList.add("is-invalid");
           emailFeedBackArea.style.display = "block";
-          emailFeedBackArea.innerHTML = `<p>${data.email_error}</p>`;
+          emailFeedBackArea.innerHTML     = `<p>${data.email_error}</p>`;
         } else {
           submitBtn.removeAttribute("disabled");
         }
