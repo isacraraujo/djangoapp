@@ -1,4 +1,13 @@
+#DELETE USER
+
 $ python manage.py shell
 $ from django.contrib.auth.models import User
 $ User.objects.all().delete()
 $ quit()
+
+#CREATE ADMIN USER
+$ python manage.py createsuperuser
+$ Username"
+$ Email"
+$ Password"
+$ Y
