@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'finanza.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'finanzadb',
+        'NAME': 'NAME DATABASE HERE',
         'USER': 'postgres',
-        'PASSWORD': '123456',
+        'PASSWORD': 'PASSWORD DATABASE HERE',
         'HOST': 'localhost',
         'PORT': 5432
     }
@@ -144,8 +144,8 @@ MESSAGE_TAGS = {
 
 # email stuff
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'qa.dev.isac@gmail.com'
+EMAIL_HOST_USER = 'EMAIL HERE'
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = 'qa.dev.isac@gmail.com'
+DEFAULT_FROM_EMAIL = 'EMAIL HERE'
 EMAIL_PORT = 587
-EMAIL_HOST_PASSWORD = 'cnteujnwjbgzoleb'
+EMAIL_HOST_PASSWORD = 'PASSWORD HERE'
